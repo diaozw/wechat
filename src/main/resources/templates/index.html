@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang=zh-cn>
+<head>
+    <meta charset=utf-8>
+    <meta name=renderer content=webkit>
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <link rel=icon href=favicon.ico>
+    <title>首页</title>
+</head>
+<body>
+
+<div id=app>
+	<a href="http://192.168.49.87:10001/open/gainWxCode?mp=hushijia">链接获取code</a>
+	<!-- <input type="button" value="测试获取Code" onclick="fun()" /> -->
+</div>
+
+<form method="post" action="/weixin/image" method="post" enctype="multipart/form-data">
+
+    <input type="file" name="files" />
+
+    <input type="submit" value="上传文件" />
+
+</form>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+
+<script>
+    function fun(){
+
+        $.ajax({  // ajax登陆请求
+            url: "http://192.168.49.87:10001/open/gainWxCode",
+            type: "get",
+            data: {"mp": 'hushijia'}
+           // success: function (res) {
+             //   alert(res);
+           // }
+        });
+    }
+</script>
+</body>
+</html>
